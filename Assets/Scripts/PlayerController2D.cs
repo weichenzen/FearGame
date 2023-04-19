@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,21 +10,21 @@ public class PlayerController2D : MonoBehaviour
 
 	public Rigidbody2D rigid;
 
-	private bool facingRight = true; // ¬O§_­±¦V¥kÃä
+	private bool facingRight = true; // æ˜¯å¦é¢å‘å³é‚Š
 
-	private Vector3 movement = Vector3.zero; // ²¾°Ê¥Îªº¦V¶q
+	private Vector3 movement = Vector3.zero; // ç§»å‹•ç”¨çš„å‘é‡
 
-	private bool allowJump = true; // ¤¹³\¸õÅD
+	private bool allowJump = true; // å…è¨±è·³èº
 
-	public float jumpSpeed = 6f; // ¸õÅD³t«×
+	public float jumpSpeed = 6f; // è·³èºé€Ÿåº¦
 
-	public float groundDetectRadius = 0.2f; // ¦aªO°»´ú¾¹¥b®|
+	public float groundDetectRadius = 0.2f; // åœ°æ¿åµæ¸¬å™¨åŠå¾‘
 
-	public LayerMask groundLayers = 1; // ¦aªOªº¹Ï¼h
+	public LayerMask groundLayers = 1; // åœ°æ¿çš„åœ–å±¤
 
-	private bool grounded = false; // ¬O§_¯¸¦b¦a­±¤W
+	private bool grounded = false; // æ˜¯å¦ç«™åœ¨åœ°é¢ä¸Š
 
-	[SerializeField] private PhysicsMaterial2D zeroFrictionMaterial; // ª«²z§÷½è
+	[SerializeField] private PhysicsMaterial2D zeroFrictionMaterial; // ç‰©ç†æè³ª
 
 	// Start is called before the first frame update
 	void Start()
@@ -50,7 +50,7 @@ public class PlayerController2D : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		// ¦a­±°»´ú
+		// åœ°é¢åµæ¸¬
 		grounded = Physics2D.OverlapCircle(transform.position, groundDetectRadius, groundLayers);
 
 		float h = Input.GetAxis("Horizontal");
@@ -113,5 +113,12 @@ public class PlayerController2D : MonoBehaviour
 		Vector3 actorScale = transform.localScale;
 		actorScale.x *= -1;
 		transform.localScale = actorScale;
+	}
+
+	void MovementController()
+	{
+		if (!Talkable.isTalking)
+		{
+		}
 	}
 }
