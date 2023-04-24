@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CinemachineTarget
   - "\u73A9\u5BB6"
+  - grounded
+  - "\u4EFB\u52D91"
+  - "\u4EFB\u52D92"
+  - "\u4EFB\u52D93"
   layers:
   - Default
   - TransparentFX
